@@ -1,0 +1,1 @@
+INSERT INTO Tasks (Tasks) VALUES ('task list');
