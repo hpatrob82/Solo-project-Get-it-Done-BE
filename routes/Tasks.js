@@ -4,6 +4,16 @@ const express = require('express'),
     router = express.Router(),
     tasksModel = require('../models/tasksModel');
 
+router.get('/:name', async(req, res) => {
+    const { name } = req.params;
+    const taskName = await tasksModel.getByName(name);
+    if (taskName) {
+        res.json(taskName).status(200);
+    } else {
+        res.status(400);
+    }
+
+});
 router.get('/', async(req, res) => {
     const tasksData = await tasksModel.getAll();
     res.json(tasksData).status(200);

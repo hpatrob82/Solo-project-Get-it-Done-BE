@@ -1,1 +1,1 @@
-INSERT INTO Tasks (Tasks) VALUES ('task list');
+INSERT INTO Tasks (task_name) VALUES ('task list');

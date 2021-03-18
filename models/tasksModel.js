@@ -6,6 +6,10 @@ class tasksModel {
         this.id = id;
         this.task_name = task_name;
     }
+    static async getAll() {
+        const response = await db.any(`SELECT * FROM Tasks;`);
+        return response;
+    }
     static async addEntry(task_name) {
         const response = await db.result(`INSERT INTO Tasks (task_name) VALUES ($1)`, [task_name])
         return response;
