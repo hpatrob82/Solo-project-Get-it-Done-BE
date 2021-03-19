@@ -32,9 +32,8 @@ router.post('/', async(req, res) => {
 })
 
 router.post('/delete', async(req, res) => {
-    const { tasks } = req.body
-    const tasks_id = new tasksModel(tasks_id);
-    const response = await comics.deleteEntry();
+    const { tasks_id } = req.body
+    const response = await tasksModel.deleteEntry(tasks);
     console.log(response);
     if (response.rowCount >= 1) {
         res.redirect('/tasks')
