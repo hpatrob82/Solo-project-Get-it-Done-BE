@@ -7,15 +7,16 @@ class tasksModel {
         this.task_name = task_name;
     }
     static async getAll() {
-        const response = await db.any(`SELECT * FROM Tasks;`);
+        const response = await db.any(`SELECT * FROM tasks;`);
         return response;
     }
     static async addEntry(task_name) {
-        const response = await db.result(`INSERT INTO Tasks (task_name) VALUES ($1)`, [task_name])
+        const response = await db.result(`INSERT INTO tasks (task_name) VALUES ($1)`, [task_name])
         return response;
     }
-    async deleteEntry() {
-        const response = await db.result(`DELETE FROM Tasks WHERE id = $1` [this.id])
+    async deleteEntry(id) {
+        const response = await db.result(`DELETE FROM tasks WHERE id = $1` [this.id])
+        return response;
     }
 }
 module.exports = tasksModel;

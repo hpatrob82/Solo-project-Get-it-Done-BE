@@ -21,6 +21,7 @@ router.get('/', async(req, res) => {
 
 router.post('/', async(req, res) => {
     const { task_name } = req.body;
+    console.log('task name should be here', task_name);
     const response = await tasksModel.addEntry(task_name);
     console.log(response);
     if (response.rowCount >= 1) {
@@ -31,8 +32,8 @@ router.post('/', async(req, res) => {
 })
 
 router.post('/delete', async(req, res) => {
-    const { task_name } = req.body
-    const tasks = new tasksModel(tasks_id);
+    const { tasks } = req.body
+    const tasks_id = new tasksModel(tasks_id);
     const response = await comics.deleteEntry();
     console.log(response);
     if (response.rowCount >= 1) {
