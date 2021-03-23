@@ -31,12 +31,12 @@ router.post('/', async(req, res) => {
     }
 })
 
-router.post('/delete', async(req, res) => {
-    const { tasks_id } = req.body
-    const response = await tasksModel.deleteEntry(tasks);
+router.delete('/delete/:task_id', async(req, res) => {
+    const { task_id } = req.params;
+    const response = await tasksModel.deleteEntry(task_id);
     console.log(response);
     if (response.rowCount >= 1) {
-        res.redirect('/tasks')
+        res.sendStatus(200)
     } else {
         res.sendStatus(500);
     }

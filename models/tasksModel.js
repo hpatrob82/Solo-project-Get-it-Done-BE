@@ -14,8 +14,8 @@ class tasksModel {
         const response = await db.result(`INSERT INTO tasks (task_name) VALUES ($1)`, [task_name])
         return response;
     }
-    async deleteEntry(id) {
-        const response = await db.result(`DELETE FROM tasks WHERE id = $1` [this.id])
+    static async deleteEntry(task_id) {
+        const response = await db.result(`DELETE FROM tasks WHERE id = $1`, [task_id]);
         return response;
     }
 }

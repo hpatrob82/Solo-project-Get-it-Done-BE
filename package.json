@@ -1,5 +1,7 @@
 {
     "dependencies": {
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-es6-template-engine": "^2.2.3",
@@ -12,10 +14,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "db:create": "createdb marvel_comics",
-        "db:destroy": "dropdb marvel_comics",
-        "db:init": "psql -f schema.sql marvel_comics",
-        "db:seed": "psql -f seed.sql marvel_comics",
+        "db:create": "createdb get-it-done",
+        "db:destroy": "dropdb get-it-done",
+        "db:init": "psql -f schema.sql get-it-done",
+        "db:seed": "psql -f seed.sql get-it-done",
         "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
         "start": "node app.js",
         "dev": "nodemon app.js"

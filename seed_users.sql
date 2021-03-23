@@ -1,8 +1,3 @@
-CREATE TABLE Tasks (
-    id serial PRIMARY KEY,
-    task_name text
-   
-);
 CREATE TABLE users (
     id serial PRIMARY KEY,
     first_name VARCHAR(200) NOT NULL,
